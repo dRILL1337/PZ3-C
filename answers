@@ -1,0 +1,106 @@
+Завдання 6
+#include <iostream>
+using namespace std;
+
+int main() {
+bool answer;
+int value;
+
+cout << "Enter a value: ";
+cin >> value;
+
+answer = (value >= 0 && value < 10) ||
+(value * 2 < 20 && value - 2 > -2) ||
+(value - 1 > 1 && value / 2 < 10) ||
+(value == 111);
+
+cout << (answer ? "THAT'S TRUE :)" : "THAT'S NOT TRUE :(") << endl;
+
+return 0;
+}
+Завдання 7
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+
+  float a, b, c, d, e;
+
+  a = 2.3;
+  b = 2.3; 
+  c = 2.123456;
+  d = 2.123456;
+  e = 2.123456;
+
+  cout << a << endl;
+
+  cout << fixed << setprecision(2) << b << endl;
+  
+  cout << fixed << setprecision(6) << c << endl;
+
+  cout << fixed << setprecision(2) << d << endl;
+
+  cout << fixed << setprecision(0) << e << endl;
+
+  return 0;
+}
+Завдання 8
+#include <iostream>
+using namespace std;
+
+int main() {
+
+int a, b;
+float x, y;
+const float epsilon = 0.000001;
+
+cout << "Введіть перше число: ";
+cin >> a;
+
+cout << "Введіть друге число: ";
+cin >> b;
+
+x = 1.0 / a;
+y = 1.0 / b;
+
+if(abs(x - y) < epsilon) {
+cout << "Результати рівні з точністю " << epsilon << endl;
+}
+else {
+cout << "Результати не рівні з точністю " << epsilon << endl;
+}
+
+return 0;
+}
+Завдання 9
+#include <iostream>
+
+bool is_valid_ip_part(int part) {
+    return 1 <= part && part <= 255;
+}
+
+int main() {
+    int ip_parts[4];
+
+    for (int i = 0; i < 4; i++) {
+        while (true) {
+            std::cout << "Enter the " << i + 1 << " part of the IP address: ";
+            int part;
+            std::cin >> part;
+
+            if (is_valid_ip_part(part)) {
+                ip_parts[i] = part;
+                break;
+            } else {
+                std::cout << "Invalid input. Please enter a number between 1 and 255." << std::endl;
+            }
+        }
+    }
+
+    std::cout << "IP address: " << ip_parts[0] << "." << ip_parts[1] << "." << ip_parts[2] << "." << ip_parts[3] << std::endl;
+
+    return 0;
+}
+
